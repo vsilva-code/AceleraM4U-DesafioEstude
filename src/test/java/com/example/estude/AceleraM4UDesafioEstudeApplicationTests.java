@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AceleraM4UDesafilEstudeApplicationTests {
+class AceleraM4UDesafioEstudeApplicationTests {
 
     @Test
     void contextLoads() {
