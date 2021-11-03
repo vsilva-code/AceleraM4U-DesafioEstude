@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -15,6 +18,9 @@ public class Student {
     private String name;
     private String email;
     private Integer age;
+
+    @OneToMany
+    private List<Adress> adress;
 
     public Integer getIdStudent() {
         return idStudent;
