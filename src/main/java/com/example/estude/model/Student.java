@@ -1,9 +1,13 @@
 package com.example.estude.model;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity
@@ -12,8 +16,11 @@ public class Student {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer idStudent;
+    @NotNull @NotEmpty @Length(min = 3, max = 200)
     private String name;
+    @NotEmpty @Length(min = 6, message = "Deve possuir no minimo 9 digitos")
     private String email;
+    @NotEmpty
     private Integer age;
 
     public Integer getIdStudent() {
