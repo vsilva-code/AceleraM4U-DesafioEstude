@@ -3,6 +3,7 @@ package com.example.estude.controller;
 import com.example.estude.model.Student;
 import com.example.estude.repository.IStudentRepository;
 import com.example.estude.service.StudentService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -63,6 +64,17 @@ public class StudentController {
        }
 
     }
-    
+
+    @DeleteMapping("{/id}")
+    public ResponseEntity<Student> remove(Integer id) {
+       Optional<Student> optional = studentService.findById(id);
+
+       if(optional.isPresent()) {
+           studentService.remove(id);
+           return ResponseEntity.noContent().build();
+       }
+
+       return ResponseEntity.notFound().build();
+    }
 
 }
