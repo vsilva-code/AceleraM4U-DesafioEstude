@@ -1,4 +1,4 @@
-package com.example.estude.controller;
+package com.example.estude;
 
 import com.example.estude.model.Student;
 import com.example.estude.repository.IStudentRepository;
@@ -57,8 +57,8 @@ public class StudentController {
 
        if(optional.isPresent() ) {
            student.setIdStudent(id);
-           Student updatedDtudent = studentService.save(student);
-           return ResponseEntity.ok(updatedDtudent);
+           Student updatedStudent = studentService.save(student);
+           return ResponseEntity.ok(updatedStudent);
        }else {
            return ResponseEntity.notFound().build();
        }
