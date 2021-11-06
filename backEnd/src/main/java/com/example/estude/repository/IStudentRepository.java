@@ -8,6 +8,6 @@ import java.util.List;
 public interface IStudentRepository extends JpaRepository<Student, Integer> {
 
     List<Student> findByNameContaining(String name);
-
-
+    
+    
 }
