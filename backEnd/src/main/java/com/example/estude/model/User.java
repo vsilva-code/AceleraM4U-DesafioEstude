@@ -13,11 +13,11 @@ public class User {
     private Integer idUser;
 
     @NotNull
-    private String nameUser;
+    private String username;
 
     @NotNull
     @Length(min = 4 , max = 8)
-    private String passaword;
+    private String password;
 
     @OneToOne
     private Student student;
@@ -30,19 +30,19 @@ public class User {
         this.idUser = idUser;
     }
 
-    public String getNameUser() {
-        return nameUser;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNameUser(String nameUser) {
-        this.nameUser = nameUser;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassaword() {
-        return passaword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassaword(String passaword) {
-        this.passaword = passaword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
