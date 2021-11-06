@@ -17,7 +17,7 @@ public class User {
 
     @NotNull
     @Length(min = 4 , max = 8)
-    private String passaword;
+    private String password;
 
     @OneToOne
     private Student student;
@@ -39,10 +39,10 @@ public class User {
     }
 
     public String getPassaword() {
-        return passaword;
+        return password;
     }
 
     public void setPassaword(String passaword) {
-        this.passaword = passaword;
+        this.password = passaword;
     }
 }
