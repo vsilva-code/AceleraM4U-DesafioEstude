@@ -8,7 +8,7 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idAdress;
+    private Integer idAddress;
     @Column(nullable=false)
     private String country;
     @Column(nullable=false)
@@ -23,11 +23,11 @@ public class Address {
 
 
     public Integer getIdAddress() {
-        return idAdress;
+        return idAddress;
     }
 
     public void setIdAddress(Integer idAdress) {
-        this.idAdress = idAdress;
+        this.idAddress = idAdress;
     }
 
     public String getCountry() {
@@ -61,9 +61,5 @@ public class Address {
     public void setStreet(String street) {
         this.street = street;
     }
-
-
-
-
 
 }
