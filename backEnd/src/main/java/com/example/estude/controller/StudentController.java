@@ -56,8 +56,8 @@ public class StudentController {
 
        if(optional.isPresent() ) {
            student.setIdStudent(id);
-           Student updatedDtudent = studentService.save(student);
-           return ResponseEntity.ok(updatedDtudent);
+           Student updatedStudent = studentService.save(student);
+           return ResponseEntity.ok(updatedStudent);
        }else {
            return ResponseEntity.notFound().build();
        }
