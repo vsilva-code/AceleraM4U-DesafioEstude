@@ -1,11 +1,6 @@
 package com.example.estude.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 
 @Entity
@@ -13,7 +8,7 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idAddress;
+    private Integer idAdress;
     @Column(nullable=false)
     private String country;
     @Column(nullable=false)
@@ -22,17 +17,17 @@ public class Address {
     private String state;
     @Column(nullable=false)
     private String street;
-    @Column(nullable = false)
-    private Integer zipcode;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "student_id")
+    private Student student;
 
 
     public Integer getIdAddress() {
-
-        return idAddress;
+        return idAdress;
     }
 
-    public void setIdAddress(Integer idAddress) {
-        this.idAddress = idAddress;
+    public void setIdAddress(Integer idAdress) {
+        this.idAdress = idAdress;
     }
 
     public String getCountry() {
@@ -67,23 +62,8 @@ public class Address {
         this.street = street;
     }
 
-    public Integer getZipcode() {
-        return zipcode;
-    }
 
-    public void setZipcode(Integer zipcode) {
-        this.zipcode = zipcode;
-    }
 
-    @Override
-    public String toString() {
-        return "Address{" +
-                "idAddress=" + idAddress +
-                ", country='" + country + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", street='" + street + '\'' +
-                ", zipcode=" + zipcode +
-                '}';
-    }
+
+
 }
