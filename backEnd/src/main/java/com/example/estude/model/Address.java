@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 
 @Entity
-public class Adress {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
