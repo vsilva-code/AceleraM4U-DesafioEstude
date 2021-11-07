@@ -2,8 +2,8 @@ package com.example.estude.controller;
 
 import java.util.List;
 
-import com.example.estude.model.Adress;
-import com.example.estude.repository.IAdressRepository;
+import com.example.estude.model.Address;
+import com.example.estude.repository.IAddressRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,36 +15,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/adress")
-public class AdressController {
+@RequestMapping("/address")
+public class AddressController {
 
     @Autowired
-    private IAdressRepository adressRepository;
+    private IAddressRepository addressRepository;
 
     @GetMapping
-    public List<Adress> listar(){
-        return adressRepository.findAll();
+    public List<Address> listar(){
+        return addressRepository.findAll ();
+
     }
 
     @PostMapping
-    public void salvar(@RequestBody Adress adress){
-        adressRepository.save(adress);
+    public void salvar(@RequestBody Address address){
+        addressRepository.save(address);
     }
 
     @PutMapping
-    public void alterar(@RequestBody Adress adress){
-        if(adress.getIdAdress()>0)
-            adressRepository.save(adress);
+    public void alterar(@RequestBody Address address){
+        if(address.getIdAddress()>0)
+            addressRepository.save(address);
     }
 
     @DeleteMapping
-    public void excluir(@RequestBody Adress adress){
-        adressRepository.delete(adress);
+    public void excluir(@RequestBody Address address){
+        addressRepository.delete(address);
     }
-
-
-
-
 
 
 
