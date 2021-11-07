@@ -22,6 +22,8 @@ public class Address {
     private String state;
     @Column(nullable=false)
     private String street;
+    @Column(nullable = false)
+    private Integer zipcode;
 
 
     public Integer getIdAddress() {
@@ -65,8 +67,23 @@ public class Address {
         this.street = street;
     }
 
+    public Integer getZipcode() {
+        return zipcode;
+    }
 
+    public void setZipcode(Integer zipcode) {
+        this.zipcode = zipcode;
+    }
 
-
-
+    @Override
+    public String toString() {
+        return "Address{" +
+                "idAddress=" + idAddress +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", street='" + street + '\'' +
+                ", zipcode=" + zipcode +
+                '}';
+    }
 }
