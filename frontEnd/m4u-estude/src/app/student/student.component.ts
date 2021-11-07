@@ -1,6 +1,7 @@
 import { StudentsService } from './../services/students.service';
 import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { Student } from '../models/student.models';
 
 @Component({
   selector: 'app-student',
