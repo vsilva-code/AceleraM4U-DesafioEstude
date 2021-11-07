@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -13,7 +14,12 @@ import { UserComponent } from './user/user.component';
 import { AddressComponent } from './address/address.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { ManagementComponent } from './management/management.component';
+=======
+import { FormsModule } from '@angular/forms';
+import { ListaStudentsComponent } from './lista-students/lista-students.component';
+>>>>>>> 0b19664edc79c3bf38691edac2f26d3a9d64a2fe
 
 @NgModule({
   declarations: [
@@ -25,14 +31,20 @@ import { ManagementComponent } from './management/management.component';
     StudentComponent,
     UserComponent,
     AddressComponent,
+<<<<<<< HEAD
     ManagementComponent
+=======
+    ListaStudentsComponent
+>>>>>>> 0b19664edc79c3bf38691edac2f26d3a9d64a2fe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

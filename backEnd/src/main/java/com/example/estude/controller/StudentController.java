@@ -32,7 +32,6 @@ public class StudentController {
     }
 
 
-
     @GetMapping("/{id}")
     public ResponseEntity<Student> findStudentBy(@PathVariable Integer id) {
         Optional<Student> optional = studentService.findById(id);
@@ -51,14 +50,14 @@ public class StudentController {
        return ResponseEntity.created(uri).body(student);
     }
 
-    @PutMapping("/id")
-    public ResponseEntity<Student> update(@PathVariable Integer id, @RequestBody Student student) {
+    @PutMapping("/{id}")
+    public ResponseEntity<Student> update(@PathVariable Integer id, @RequestBody @Valid Student student) {
        Optional<Student> optional = studentService.findById(id);
 
        if(optional.isPresent() ) {
            student.setIdStudent(id);
-           Student updatedStudent = studentService.save(student);
-           return ResponseEntity.ok(updatedStudent);
+           Student updatedDtudent = studentService.save(student);
+           return ResponseEntity.ok(updatedDtudent);
        }else {
            return ResponseEntity.notFound().build();
        }
