@@ -13,6 +13,7 @@ import { UserComponent } from './user/user.component';
 import { AddressComponent } from './address/address.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ManagementComponent } from './management/management.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     StudentComponent,
     UserComponent,
-    AddressComponent
+    AddressComponent,
+    ManagementComponent
   ],
   imports: [
     BrowserModule,
