@@ -2,12 +2,10 @@ package com.example.estude.model;
 
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -20,8 +18,11 @@ public class Student {
     private String name;
     @NotEmpty @Length(min = 6, message = "Deve possuir no minimo 9 digitos")
     private String email;
-    @NotEmpty
+
     private Integer age;
+    @OneToMany( fetch = FetchType.EAGER, mappedBy = "student")
+    private List<Adress> adresses;
+
 
     public Integer getIdStudent() {
         return idStudent;

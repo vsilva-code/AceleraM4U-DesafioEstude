@@ -1,3 +1,4 @@
+import { StudentsService } from './services/students.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -10,8 +11,15 @@ export class AppComponent {
 
   title = 'm4u-estude';
 
-  public form!: FormGroup;
-  
+  constructor(private service: StudentsService){
 
+  }
+
+  public form!: FormGroup;
+
+  cadastrar($event: any) {
+    console.log($event)
+    this.service.adicionar($event);
+  }
 
 }

@@ -1,11 +1,6 @@
 package com.example.estude.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 
 @Entity
@@ -22,6 +17,9 @@ public class Adress {
     private String state;
     @Column(nullable=false)
     private String street;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "student_id")
+    private Student student;
 
 
     public Integer getIdAdress() {
