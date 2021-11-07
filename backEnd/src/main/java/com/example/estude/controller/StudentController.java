@@ -1,4 +1,4 @@
-package com.example.estude;
+package com.example.estude.controller;
 
 import com.example.estude.model.Student;
 import com.example.estude.repository.IStudentRepository;

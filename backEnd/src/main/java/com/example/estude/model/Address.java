@@ -9,11 +9,11 @@ import javax.persistence.ManyToOne;
 
 
 @Entity
-public class Adress {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idAdress;
+    private Integer idAddress;
     @Column(nullable=false)
     private String country;
     @Column(nullable=false)
@@ -24,12 +24,13 @@ public class Adress {
     private String street;
 
 
-    public Integer getIdAdress() {
-        return idAdress;
+    public Integer getIdAddress() {
+
+        return idAddress;
     }
 
-    public void setIdAdress(Integer idAdress) {
-        this.idAdress = idAdress;
+    public void setIdAddress(Integer idAddress) {
+        this.idAddress = idAddress;
     }
 
     public String getCountry() {
