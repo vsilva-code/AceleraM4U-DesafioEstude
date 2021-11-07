@@ -21,7 +21,7 @@ public class Student {
 
     private Integer age;
     @OneToMany( fetch = FetchType.EAGER, mappedBy = "student")
-    private List<Adress> adresses;
+    private List<Address> adresses;
 
 
     public Integer getIdStudent() {

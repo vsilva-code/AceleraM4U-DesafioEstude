@@ -22,11 +22,11 @@ public class Address {
     private Student student;
 
 
-    public Integer getIdAdress() {
+    public Integer getIdAddress() {
         return idAdress;
     }
 
-    public void setIdAdress(Integer idAdress) {
+    public void setIdAddress(Integer idAdress) {
         this.idAdress = idAdress;
     }
 
